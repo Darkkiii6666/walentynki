@@ -50,7 +50,7 @@ const CONFIG = {
     // Messages that appear after they say "Yes!"
     celebration: {
         title: "TAK, WIEDZIAŁEM ŻE SIĘ ZGODZISZ XDD! 🎉💝💖💝💓",
-        message: "516433979, 880880",
+        message: "TEST1, TEST1",
         emojis: "🎁💖🤗💝💋❤️💕"  // These will bounce around
     },
 
