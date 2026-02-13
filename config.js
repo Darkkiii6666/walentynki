@@ -28,12 +28,12 @@ const CONFIG = {
             secretAnswer: "Nie lubię cię ale cię kocham ❤️"           // Secret hover message
         },
         second: {
-            text: "Jak bardzo mnie lubisz?",                          // For the love meter
+            text: "Jak bardzo ci zależy?",                          // For the love meter
             startText: "Tak bardzo!",                                   // Text before the percentage
             nextBtn: "Dalej ❤️"                                         // Text for the next button
         },
         third: {
-            text: "Będziesz moją waletynką? 🌹🌹", // The big question!
+            text: "Będziesz moją walentynką? 🌹🌹", // The big question!
             yesBtn: "Tak koniecznie",                                             // Text for "Yes" button
             noBtn: "Nie "                                                 // Text for "No" button
         }
@@ -42,27 +42,28 @@ const CONFIG = {
     // Love meter messages
     // They show up depending on how far they slide the meter
     loveMessages: {
-        extreme: "WOOOOW Aż tak bardzo mnie lubisz?? 🥰🚀💝",  // Shows when they go past 5000%
+        extreme: "WOOOOW Aż tak bardzo?? 🥰🚀💝",  // Shows when they go past 5000%
         high: "Nie no napewno jeszcze bardziej 🚀💝",              // Shows when they go past 1000%
         normal: "Jeszcze bardziej! 🥰"                           // Shows when they go past 100%
     },
 
     // Messages that appear after they say "Yes!"
     celebration: {
-        title: "TAK, WIEDZIAŁEM ŻE SIĘ ZGODZISZ XDD! 🎉💝💖💝💓",
-        message: "TEST1, TEST1",
+        title: "WIEDZIAŁEM ŻE SIĘ ZGODZISZ BUZIAK 🎉💖💝💓",
+        message: "Fredry 23, 516433979, 409 227",
         emojis: "🎁💖🤗💝💋❤️💕"  // These will bounce around
     },
 
     // Color scheme for the website
     // Use https://colorhunt.co or https://coolors.co to find beautiful color combinations
-    colors: {
-        backgroundStart: "#ffafbd",      // Gradient start (try pastel colors for a soft look)
-        backgroundEnd: "#ffc3a0",        // Gradient end (should complement backgroundStart)
-        buttonBackground: "#bf0000",     // Button color (should stand out against the background)
-        buttonHover: "#ff8787",          // Button hover color (slightly lighter than buttonBackground)
-        textColor: "#ff4757"             // Text color (make sure it's readable!)
-    },
+colors: {
+    backgroundStart: "#ff5f8d",   // mocny róż
+    backgroundEnd: "#ffc1d9",     // jasny róż
+    buttonBackground: "#ff2f68",  // malinowy
+    buttonHover: "#ff6f91",       // hover
+    textColor: "#c9184a"          // ciemna czerwień
+},
+
 
     // Animation settings
     // Adjust these if you want faster/slower animations
@@ -78,7 +79,7 @@ const CONFIG = {
     music: {
         enabled: true,                     // Music feature is enabled
         autoplay: true,                    // Try to autoplay (note: some browsers may block this)
-        musicUrl: "https://res.cloudinary.com/dncywqfpb/video/upload/v1738399057/music_qrhjvy.mp3", // Music streaming URL
+        musicUrl: "https://res.cloudinary.com/dxwzukms9/video/upload/v1770736648/Kali_-_Przeznaczenie_mp3cut.net_fl7kb2.mp3", // Music streaming URL
         startText: "🎵 Włącz muzyke",        // Button text to start music
         stopText: "🔇 Wyłącz muzyke",         // Button text to stop music
         volume: 0.5                        // Volume level (0.0 to 1.0)
