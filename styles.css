@@ -1,11 +1,11 @@
 /* CSS Variables - Will be updated by JavaScript */
 :root {
     /* Colors */
-    --background-color-1: #ffafbd;
-    --background-color-2: #ffc3a0;
-    --button-color: #ff6b6b;
-    --button-hover: #ff8787;
-    --text-color: #ff4757;
+    --background-color-1: #ff2e63;
+    --background-color-2: #ffb6c1;
+    --button-color: #ff4b6e;
+    --button-hover: #ff758c;
+    --text-color: #ff2f68;
 
     /* Animations */
     --float-duration: 15s;
@@ -29,7 +29,7 @@ body {
     background: rgba(255, 255, 255, 0.9);
     padding: 2rem;
     border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 25px rgba(255, 71, 87, 0.35);
     text-align: center;
     max-width: 600px;
     margin: 20px;
@@ -258,6 +258,7 @@ body {
 h1, h2 {
     font-family: Arial, sans-serif;
     font-weight: 700;
+    text-shadow: 0 0 8px rgba(255, 71, 87, 0.4);
 }
 
 h1 {
@@ -316,3 +317,87 @@ h2 {
     transform: scale(1.05);
     background: var(--secondary-color);
 } 
+
+/* ===== LOCK SCREEN PREMIUM ===== */
+
+#lockScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: linear-gradient(135deg,
+        var(--background-color-1),
+        var(--background-color-2)
+    );
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 99999;
+    font-family: Poppins, Arial, sans-serif;
+
+    transition: opacity 0.5s ease;
+}
+
+
+#lockScreen h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ff4757;
+}
+
+#codeInput {
+    font-size: 20px;
+    padding: 12px 15px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    width: 160px;
+    text-align: center;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#unlockBtn {
+    margin-top: 15px;
+    padding: 10px 30px;
+
+    font-size: 18px;
+    border: none;
+    border-radius: 20px;
+
+    background: var(--button-color);
+    color: white;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#unlockBtn:hover {
+    background: var(--button-hover);
+    transform: scale(1.1);
+}
+
+#lockError {
+    margin-top: 12px;
+    color: red;
+    display: none;
+}
+
+/* Shake animation */
+
+.shake {
+    animation: shake 0.3s;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
