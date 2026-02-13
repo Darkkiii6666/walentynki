@@ -1,3 +1,80 @@
+// ==== LOCK SYSTEM: 10 ATTEMPTS + HINT ====
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const correctCode = "2109";
+  const maxAttempts = 10;
+
+  let attemptsLeft = maxAttempts;
+  let wrongTries = 0;
+
+  const lockScreen = document.getElementById("lockScreen");
+  const codeInput = document.getElementById("codeInput");
+  const unlockBtn = document.getElementById("unlockBtn");
+  const error = document.getElementById("lockError");
+
+  document.body.style.overflow = "hidden";
+
+  function unlock() {
+
+    if (attemptsLeft <= 0) {
+      error.style.display = "block";
+      error.textContent = "🚫 Za dużo prób. Odśwież stronę.";
+      return;
+    }
+
+    if (codeInput.value === correctCode) {
+
+      lockScreen.style.opacity = "0";
+
+      setTimeout(() => {
+        lockScreen.style.display = "none";
+        document.body.style.overflow = "auto";
+      }, 500);
+
+    } else {
+
+      attemptsLeft--;
+      wrongTries++;
+
+      error.style.display = "block";
+
+      // Podpowiedź po 2 próbach
+      if (wrongTries === 2) {
+        error.textContent =
+          `💡 To data ale związana z tobą tylko (pozostało ${attemptsLeft} prób)`;
+      } 
+      else {
+        error.textContent =
+          `❌ Zły kod. Pozostało prób: ${attemptsLeft}`;
+      }
+
+      codeInput.classList.add("shake");
+
+      setTimeout(() => {
+        codeInput.classList.remove("shake");
+      }, 400);
+
+      codeInput.value = "";
+
+      if (attemptsLeft <= 0) {
+        unlockBtn.disabled = true;
+        unlockBtn.style.opacity = "0.5";
+        error.textContent =
+          "🚫 Limit prób wyczerpany. Odśwież stronę.";
+      }
+    }
+  }
+
+  unlockBtn.addEventListener("click", unlock);
+
+  codeInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") unlock();
+  });
+
+});
+
+
 // Initialize configuration
 const config = window.VALENTINE_CONFIG;
 
@@ -8,7 +85,7 @@ function validateConfig() {
     // Check required fields
     if (!config.valentineName) {
         warnings.push("Valentine's name is not set! Using default.");
-        config.valentineName = "My Love";
+        config.valentineName = "Martynka";
     }
 
     // Validate colors
@@ -59,7 +136,7 @@ window.addEventListener('DOMContentLoaded', () => {
     validateConfig();
 
     // Set texts from config
-    document.getElementById('valentineTitle').textContent = `${config.valentineName}, my love...`;
+    document.getElementById('valentineTitle').textContent = `${config.valentineName}`;
     
     // Set first question texts
     document.getElementById('question1Text').textContent = config.questions.first.text;
